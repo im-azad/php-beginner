@@ -1,69 +1,68 @@
-<!DOCTYPE html>
-<html>
+    <?php
+    $books = [
+        [
+            'name' => 'Do Androids Dream of Electric Sheep',
+            'author' => 'Philip K. Dick',
+            'releaseYear' => 1968,
+            'purchaseUrl' => 'http://example.com'
+        ],
+        [
+            'name' => 'Project Hail Mary',
+            'author' => 'Andy Weir',
+            'releaseYear' => 2021,
+            'purchaseUrl' => 'http://example.com'
+        ],
+        [
+            'name' => 'The Martian',
+            'author' => 'Andy Weir',
+            'releaseYear' => 2011,
+            'purchaseUrl' => 'http://example.com'
+        ],
+        [
+            'name' => 'The Martian sd',
+            'author' => 'Andy Weir sdf',
+            'releaseYear' => 2010,
+            'purchaseUrl' => 'http://example.com'
+        ]
+    ];
 
-<head>
-    <title>HTML Tutorial</title>
-</head>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        display: grid;         
-        place-items: center;
-        background-color: #ffefef;
-    }
- 
-</style>
-
-<body>
-
-<!-- Conditional Rendering -->
-
-    <?php 
-        $book_name = "Quran";
-        $is_read = false;
-        if($is_read) {
-            $message = "You have read $book_name, Good!";
-        } else {
-            $message = "You have not read $book_name, Bad!!";
+    /* 
+     $filter = function ($books, $key, $value)
+    {
+        $filteredBooks = [];
+        foreach ($books as $book) {
+            if ($book[$key] === $value) {
+                $filteredBooks[] = $book;
+            }
         }
-    ?>
-    <h1>
-        <?php echo $message; ?>
+        return $filteredBooks;
+    };
 
-    </h1>
-    <p> <?= $message ?> </p>
-
-    <!-- Variable and print -->
-    <h2>
-        <?php
-            $my_name = "John Doe";
-
-            /* This is a comment */
-            echo "Hello $my_name!";
+    $filteredBooks = $filter($books, 'releaseYear', 2010); 
+    
+    */
 
 
-        ?>
-    </h2>
-    <p>This is a paragraph.</p>
-    <p>
-        <?php
-            echo "Hi azad!!" ;
-        ?>
-    </p>
-    <h4>
-        <?php 
-            print "What are you doing now";
-        ?>
-    </h4>
-    <p>
-        <?php
-            echo "this is fun";
-        ?>
+    function filter($items, $fun)
+    {
+        $filteredItems = [];
+        foreach ($items as $item) {
+            if ($fun($item)) {
+                $filteredItems[] = $item;
+            }
+        }
+        return $filteredItems;
+    };
 
-    </p>
+    // $filteredBooks = filter($books, function($book){
+    //     return $book['releaseYear'] >= 2010;
+    // });
 
-</body>
 
-</html>
+    // Using PHP array_filter
+    $filteredBooks = array_filter($books, function ($book) {
+        return $book['releaseYear'] >= 2000;
+    });
+
+    require 'index.view.php';
+
