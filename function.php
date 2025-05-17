@@ -39,13 +39,19 @@
                 'author' => 'Andy Weir',
                 'releaseYear' => 2011,
                 'purchaseUrl' => 'http://example.com'
+            ],
+            [
+                'name' => 'The Martian sd',
+                'author' => 'Andy Weir sdf',
+                'releaseYear' => 2010,
+                'purchaseUrl' => 'http://example.com'
             ]
         ];
 
-        function filterByAuthor($books) {
+        function filterByAuthor($books, $author) {
            $filteredBooks = [];
            foreach($books as $book) {
-                if($book['author'] === 'Andy Weir') {
+                if($book['author'] === $author) {
                     $filteredBooks[] = $book;
                 }
            }
@@ -69,7 +75,7 @@
 
     <h2>Filtered Array</h2>
    <ol>
-        <?php foreach (filterByAuthor($books) as $book) : ?>
+        <?php foreach (filterByAuthor($books, 'Andy Weir') as $book) : ?>
             <li> 
                 <a href="<?=$book['purchaseUrl']?>">
                     <?= $book['name']; ?> (<?= $book['releaseYear'] ; ?>)
