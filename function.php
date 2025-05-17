@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Function and filter</title>
 </head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: grid;         
+        place-items: center;
+        background-color: #fcf6f6;
+    }
+    .author {
+        color:#509393;
+    }   
+ 
+</style>
 <body>
      <?php
         $books = [
@@ -27,20 +41,42 @@
                 'purchaseUrl' => 'http://example.com'
             ]
         ];
+
+        function filterByAuthor($books) {
+           $filteredBooks = [];
+           foreach($books as $book) {
+                if($book['author'] === 'Andy Weir') {
+                    $filteredBooks[] = $book;
+                }
+           }
+           return $filteredBooks;
+        }
+
+   
     ?>
 
     <!-- Print the data -->
     <ul>
         <?php foreach ($books as $book) : ?>
-            <?php if($book['author'] === 'Andy Weir') : ?>
+            <li> 
+                <a href="<?=$book['purchaseUrl']?>">
+                    <?= $book['name']; ?> (<?= $book['releaseYear'] ; ?>) 
+                </a>
+                <spn class="author" >by <?= $book['author']; ?> </spn>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h2>Filtered Array</h2>
+   <ol>
+        <?php foreach (filterByAuthor($books) as $book) : ?>
             <li> 
                 <a href="<?=$book['purchaseUrl']?>">
                     <?= $book['name']; ?> (<?= $book['releaseYear'] ; ?>)
                 </a>
             </li>
-            <?php endif; ?>
         <?php endforeach; ?>
-    </ul>
+   </ol>
     
 </body>
 </html>
