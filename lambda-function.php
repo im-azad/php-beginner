@@ -50,18 +50,43 @@
         ]
     ];
 
-    function filterByAuthor($books, $author)
+    /* 
+     $filter = function ($books, $key, $value)
     {
         $filteredBooks = [];
         foreach ($books as $book) {
-            if ($book['author'] === $author) {
+            if ($book[$key] === $value) {
                 $filteredBooks[] = $book;
             }
         }
         return $filteredBooks;
-    }
+    };
 
-    $filteredBooks = filterByAuthor($books, 'Andy Weir')
+    $filteredBooks = $filter($books, 'releaseYear', 2010); 
+    
+    */
+
+
+    function filter($items, $fun)
+    {
+        $filteredItems = [];
+        foreach ($items as $item) {
+            if ($fun($item)) {
+                $filteredItems[] = $item;
+            }
+        }
+        return $filteredItems;
+    };
+
+    // $filteredBooks = filter($books, function($book){
+    //     return $book['releaseYear'] >= 2010;
+    // });
+
+
+    // Using PHP array_filter
+    $filteredBooks = array_filter($books, function ($book) {
+        return $book['releaseYear'] == 2011;
+    });
 
     ?>
 
@@ -69,7 +94,7 @@
 
     <h2>Lambda Function</h2>
     <ol>
-        <?php foreach ( $filteredBooks as $book) : ?>
+        <?php foreach ($filteredBooks as $book) : ?>
             <li>
                 <a href="<?= $book['purchaseUrl'] ?>">
                     <?= $book['name']; ?> (<?= $book['releaseYear']; ?>)
