@@ -15,10 +15,10 @@
                </button>
            </div>
            <div class="hidden lg:flex lg:gap-x-12">
-               <a href="/" class="text-sm/6 font-semibold text-gray-900">Home</a>
-               <a href="/about.php" class="text-sm/6 font-semibold text-gray-900">About</a>
-               <a href="/contact.php" class="text-sm/6 font-semibold text-gray-900">Contact</a>
-               <a href="/services.php" class="text-sm/6 font-semibold text-gray-900">Services</a>
+               <a href="/" class="text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-lg bg-gray-900 text-white hover:text-gray-700 hover:bg-gray-200">Home</a>
+               <a href="/about.php" class="text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-200">About</a>
+               <a href="/contact.php" class="text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-200">Contact</a>
+               <a href="/services.php" class="text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-200">Services</a>
            </div>
            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
