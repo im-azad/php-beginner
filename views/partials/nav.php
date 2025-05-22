@@ -16,9 +16,9 @@
            </div>
            <div class="hidden lg:flex lg:gap-x-12">
                <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : '' ?>  text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:text-gray-700 hover:bg-gray-200">Home</a>
-               <a href="/about.php" class="<?= urlIs('/about.php') ? 'bg-gray-900 text-white' : '' ?>  text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:bg-gray-200">About</a>
-               <a href="/contact.php" class="<?= urlIs('/contact.php') ? 'bg-gray-900 text-white' : '' ?> text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
-               <a href="/services.php" class="<?= urlIs('/services.php') ? 'bg-gray-900 text-white' : '' ?> text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:bg-gray-200">Services</a>
+               <a href="/about" class="<?= urlIs('/about') ? 'bg-gray-900 text-white' : '' ?>  text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:bg-gray-200">About</a>
+               <a href="/contact" class="<?= urlIs('/contact') ? 'bg-gray-900 text-white' : '' ?> text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
+               <a href="/services" class="<?= urlIs('/services') ? 'bg-gray-900 text-white' : '' ?> text-sm/6 font-semibold text-gray-900 px-3 py-2 rounded-md hover:bg-gray-200">Services</a>
            </div>
            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
@@ -45,9 +45,9 @@
                    <div class="-my-6 divide-y divide-gray-500/10">
                        <div class="space-y-2 py-6">
                            <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                           <a href="/about.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
-                           <a href="/contact.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
-                           <a href="/services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Services</a>
+                           <a href="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
+                           <a href="/contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+                           <a href="/services" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Services</a>
                        </div>
                        <div class="py-6">
                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
