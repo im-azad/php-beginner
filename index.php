@@ -2,20 +2,23 @@
 
 require 'functions.php';
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI']) ['path'];
+$routes = [
+ '/' => 'controllers/index.php',
+ '/about' => 'controllers/about.php',
+ '/contact' => 'controllers/contact.php',
+ '/services' => 'controllers/services.php',  
+];
 
-
-dd($uri);
-
-if($uri === '/') {
-    require 'controllers/index.php';
-} else if($uri === '/about') {
-    require 'controllers/about.php';
-} else if($uri === '/contact') {
-    require 'controllers/contact.php';
-} else if($uri === '/services') {
-    require 'controllers/services.php';
-} else {
+function abort() {
     http_response_code(404);
     require 'views/404.view.php';
+    die();
 }
+
+if (array_key_exists($uri, $routes)) {
+    require $routes[$uri];
+} else {
+    abort();
+}
+
